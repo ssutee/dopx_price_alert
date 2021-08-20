@@ -81,21 +81,13 @@ const buy = async (amountIn, dopxAmount, symbol, dex, txHash, timestamp) => {
   const text = `
 🟩 BUY>DOPX-${symbol.toUpperCase()} (${dex})
 
-       ${parseFloat(fromWei(amountIn)).toLocaleString()} ${symbol.toUpperCase()}
-          👇 ($${parseFloat(
-            tradeValue.div(toWei("1")).toFixed()
-          ).toLocaleString()})
-       ${parseFloat(fromWei(dopxAmount)).toLocaleString()} DOPX
+         ${parseFloat(fromWei(amountIn)).toLocaleString()} ${symbol.toUpperCase()}
+              👇 ($${parseFloat(tradeValue.div(toWei("1")).toFixed()).toLocaleString()})
+         ${parseFloat(fromWei(dopxAmount)).toLocaleString()} DOPX
 
-${symbol.toUpperCase()} price: $${price}
-DOPX swap price: <b>$${parseFloat(
-    dopxValue.toString()
-  ).toLocaleString()}</b> (${parseFloat(
-    dopxPrice.toString()
-  ).toLocaleString()} ${symbol.toUpperCase()})
-🔎 <a href="https://bscscan.com/tx/${txHash}">View</a> | 🕒 ${day.format(
-    "DD/MM/YYYY HH:mm:ss"
-  )}
+${symbol.toUpperCase()} price: $${parseFloat(price).toLocaleString()}
+DOPX swap price: <b>$${parseFloat(dopxValue.toString()).toLocaleString()}</b> (${parseFloat(dopxPrice.toString()).toLocaleString(undefined, {'maximumFractionDigits':5})} ${symbol.toUpperCase()})
+🔎 <a href="https://bscscan.com/tx/${txHash}">View</a> | 🕒 ${day.format("DD/MM/YYYY HH:mm:ss")}
 `;
   return text;  
 };
@@ -113,23 +105,13 @@ const sell = async (dopxAmount, amountOut, symbol, dex, txHash, timestamp) => {
   const text = `
 🟥 SELL>DOPX-${symbol.toUpperCase()} (${dex})
 
-       ${parseFloat(fromWei(dopxAmount)).toLocaleString()} DOPX
-          👇 ($${parseFloat(
-            tradeValue.div(toWei("1")).toFixed()
-          ).toLocaleString()})
-       ${parseFloat(
-         fromWei(amountOut)
-       ).toLocaleString()} ${symbol.toUpperCase()}
+         ${parseFloat(fromWei(dopxAmount)).toLocaleString()} DOPX
+              👇 ($${parseFloat(tradeValue.div(toWei("1")).toFixed()).toLocaleString()})
+         ${parseFloat(fromWei(amountOut)).toLocaleString()} ${symbol.toUpperCase()}
 
-${symbol.toUpperCase()} price: $${price}
-DOPX swap price: <b>$${parseFloat(
-    dopxValue.toString()
-  ).toLocaleString()}</b> (${parseFloat(
-    dopxPrice.toString()
-  ).toLocaleString()} ${symbol.toUpperCase()})
-🔎 <a href="https://bscscan.com/tx/${txHash}">View</a> | 🕒 ${day.format(
-    "DD/MM/YYYY HH:mm:ss"
-  )}
+${symbol.toUpperCase()} price: $${parseFloat(price).toLocaleString()}
+DOPX swap price: <b>$${parseFloat(dopxValue.toString()).toLocaleString()}</b> (${parseFloat(dopxPrice.toString()).toLocaleString(undefined, {'maximumFractionDigits':5})} ${symbol.toUpperCase()})
+🔎 <a href="https://bscscan.com/tx/${txHash}">View</a> | 🕒 ${day.format("DD/MM/YYYY HH:mm:ss")}
 `;
   return text;  
 };
