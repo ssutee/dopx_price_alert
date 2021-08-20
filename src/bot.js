@@ -169,7 +169,4 @@ const main = async () => {
   await watch(pair4, "bnb", "Pancake");
 };
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main()
