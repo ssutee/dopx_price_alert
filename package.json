@@ -1,0 +1,50 @@
+{
+  "name": "dopx-price-alert-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "nodemon --exec babel-node src",
+    "build": "rimraf lib && babel src -d lib && cp -r src/abis lib",
+    "start": "node lib",
+    "worker": "node src/worker.js",
+    "bot": "node src/bot.js"
+  },
+  "author": "Sutee Sudprasert",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.14.8",
+    "@bull-board/express": "^3.3.0",
+    "@uniswap/v2-core": "^1.0.1",
+    "axios": "^0.21.1",
+    "bignumber.js": "^9.0.1",
+    "bluebird": "^3.7.2",
+    "bull": "^3.26.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.54.0",
+    "pino": "^4.17.3",
+    "pino-http": "^5.5.0",
+    "pino-pretty": "^2.0.1",
+    "promise-limit": "^2.7.0",
+    "promise-retry": "^2.0.1",
+    "redis": "^3.1.2",
+    "run-func": "^1.0.5",
+    "web3": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": ">= 12.22"
+  }
+}
